@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC  "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.IStudentMapper">
+<insert id="add"  parameterType="com.pojo.Student" >
+insert into student (sname,sex,address,birthday,photo,classid) values (#{sname},#{sex},#{address},#{birthday},#{photo},#{classid})
+</insert>
+<delete id="delete" parameterType="java.lang.Integer">
+delete from student where stuid=#{sid}
+</delete>
+<update id="update" parameterType="com.pojo.Student">
+update student set sname=#{sname},sex=#{sex},address=#{address},birthday=#{birthday},photo=#{photo},classid=#{classid} where stuid=${stuid}
+</update>
+    <select id="findbyid" parameterType="Integer" resultType="com.pojo.Student">
+    select * from student where stuid=#{sid}
+    </select>
+<select id="findAll" resultType="com.pojo.Student">
+select * from vstu
+</select>
+<select id="findClazzAll" resultType="com.pojo.Clazz">
+select * from clazz
+</select>
+    <select id="findPageAll" resultType="com.pojo.Student" parameterType="Integer">
+select * from vstu limit ${(page-1)*rows},${rows}
+    </select>
+    <select id="maxRows" resultType="Integer">
+  select count(*) from vstu
+    </select>
+</mapper>

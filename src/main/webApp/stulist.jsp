@@ -104,7 +104,6 @@
                     $("#sdate").val(lsst.sdate);
                     $("#img").attr('src','wenjian/'+lsst.photo);
                     $("#a").attr('href','wenjian/'+lsst.photo);
-                    alert(lsst.pic);
                     $("#classid").val(lsst.classid);
                    chaclazz(lsst.classid);
                    $("#xgtable").show();
@@ -121,7 +120,6 @@
             var sdate=$("#sdate").val();
             var classid=$("#classid").val();
             var photo=$("#img")[0].src;
-            //var pic=document.getElementById('#pic');
             var date={
                 'stuid':stuid,
                 'sname':sname,

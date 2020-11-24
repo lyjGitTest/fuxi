@@ -46,6 +46,24 @@ public class Student implements Serializable {
         this.sdate = sdate;
     }
 
+    public MultipartFile getPic() {
+        return pic;
+    }
+
+    public void setPic(MultipartFile pic) {
+        this.pic = pic;
+    }
+
+    public Student(String sname, String sex, String address, String photo, Integer classid, String cname, MultipartFile pic) {
+        this.sname = sname;
+        this.sex = sex;
+        this.address = address;
+        this.photo = photo;
+        this.classid = classid;
+        this.cname = cname;
+        this.pic = pic;
+    }
+
     public Integer getStuid() {
         return stuid;
     }

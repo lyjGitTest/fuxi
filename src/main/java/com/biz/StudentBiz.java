@@ -61,10 +61,6 @@ public class StudentBiz implements IStudentBiz {
         return iStudentMapper.findbyid(sid);
     }
 
-    @Override
-    public List<Student> findAll() {
-        return iStudentMapper.findAll();
-    }
 
     @Override
     public List<Student> findPageAll(Integer rows, Integer page) {
